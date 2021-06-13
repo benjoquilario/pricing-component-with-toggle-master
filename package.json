@@ -1,0 +1,14 @@
+{
+  "name": "pricing-component-with-toggle-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Pricing component with toggle coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass app/scss/style.scss dist/style.css"
+  },
+  "author": "benjo quilario",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^6.0.0"
+  }
+}

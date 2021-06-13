@@ -1,0 +1,215 @@
+@import "variables";
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+hr {
+    background-color: $grayishBlue;
+    width: 17.875rem;
+}
+h1 {
+    font-size: 4.2rem;
+}
+h3 {
+    color: $darkGrayishBlue;
+}
+body {
+    min-height: 100vh;
+    background-image: url('/images/bg-top.svg'), url('/images/bg-bottom.svg');
+    background-repeat: no-repeat;
+    background-position: right top,left bottom;
+    //background-size: 25vw, -24vw;
+    background-color: $veryLightGrayishBlue;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+    @include breakpoint-down(medium) {
+        height: auto;
+    }
+}
+
+
+.heading {
+    margin: 4.6rem 0;
+    &--text {
+        font-size: 2rem;
+        color: $grayishBlue;
+    }
+    .switching {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2.2rem;
+         p{
+             color: $grayishBlue;
+         }
+        .switch {
+        position: relative;
+        display: inline-block;
+        width: 3.75rem;
+        height: 2.125rem;
+        margin: 0 1rem 0;
+        }
+        .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 1.625rem;
+        width: 1.625rem;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      input:checked + .slider {
+        background: linear-gradient(hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px linear-gradient(hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+      }
+      
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+      
+      .slider.round {
+        border-radius: 34px;
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+      }
+    }
+}
+.pricing--main {
+    display: flex;
+    border-radius: 1.25rem;
+    flex-wrap: wrap;
+    @include breakpoint-down(small) {
+        flex-direction: column;
+    }
+    .pricing {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding:2rem 2rem;
+        background-color: #fff;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.19), 0 2px 6px rgba(0,0,0,0.23);
+        margin-bottom: 2rem;
+        @include breakpoint-down(small) {
+            padding: 1rem 1rem;
+            border-radius: 0.625rem;
+        }
+        .pricing--tag-none {
+            display: none;
+        }
+        .dollar {
+            font-size: 2.8rem;
+        }
+    }
+    .pricing--1 {
+        p {
+            color: $grayishBlue;
+            padding: 1.14rem 0;
+        }
+        align-self: center;
+        border-top-left-radius: 0.625rem;
+        border-bottom-left-radius: 0.625rem;
+        .pricing--tag {
+            color: $darkGrayishBlue;
+        }
+        
+    }
+    .pricing--2 {
+        background: linear-gradient(to right,hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+        padding: 3.8rem 1.5rem;
+        border-radius: 0.625rem;
+        color: $veryLightGrayishBlue;
+        h3 {
+            color: $veryLightGrayishBlue;
+        }
+        p {
+            padding: 1.14rem 0;
+        }
+        @include breakpoint-down(small) {
+            padding: 2rem 1rem;
+        }
+    }
+    .pricing--3 {
+        p {
+            color: $grayishBlue;
+            padding: 1.14rem 0;
+        }
+        align-self: center;
+        border-top-right-radius: 0.625rem;
+        border-bottom-right-radius: 0.625rem;
+        .pricing--tag {
+            color: $darkGrayishBlue;
+            
+        }
+    }
+}
+
+
+//BUTTON
+button {
+    display: inline;
+    width: 100%;
+   
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    height: 2.75rem;
+    
+}
+.button--basic, .button--master {
+    background: linear-gradient(to right,hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    color: $veryLightGrayishBlue;
+    &:hover {
+        background: transparent;
+        color: $grayishBlue;
+        border: 2px solid $grayishBlue;
+    }
+}
+
+.button--pro {
+    color: $grayishBlue;
+    &:hover {
+        background-color: transparent;
+        border: 2px solid $veryLightGrayishBlue;
+        color: $veryLightGrayishBlue;
+    }
+}
